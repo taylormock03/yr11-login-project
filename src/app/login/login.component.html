@@ -1,0 +1,35 @@
+<h1> Login</h1>
+<table>
+	<tr>
+		<td>
+			<!-- Login Info -- Will receive from Database -->
+			<div class="error"> {{errorMessage}} </div>
+		</td>
+	</tr>
+	<td>
+		<form flex [formGroup]="LoginForm" (ngSubmit)="submit()">
+			<div fxLayout="column" fxLayoutAlign="space-around start">
+				<mat-form-field>
+					<input matInput placeholder="Username" name="Login_Username"  formControlName="Login_Username">
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput placeholder="Password" name="Login_Password"  formControlName="Login_Password">
+				</mat-form-field>
+        <br> <br>
+		 <div fxFlex class="register-but">
+			  	<button mat-raised-button color="primary"  >Login</button>
+			  </div>
+  </div>
+
+	</form>
+  </td>
+  <tr>
+    <td>
+  	<div fxFlex class="register-but">
+        <button routerLink="/signup"  mat-raised-button color="primary">Sign Up</button>
+			</div>  </td>
+
+  </tr>
+</table>
+
+  

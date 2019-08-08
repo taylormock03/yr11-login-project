@@ -1,0 +1,32 @@
+<h1> HOME</h1>  
+ <button routerLink="/login"  mat-raised-button color="primary">Login</button> 
+  <button routerLink="/signup"  mat-raised-button color="primary">Sign Up</button>
+<div flex fxLayout="row wrap">
+	<div class="box">
+		<h3> Current Users in database</h3>
+		<div fxLayout="column">
+
+			<mat-list-item *ngFor="let item of people; let i=index">
+				<div fxFlex="auto">
+					Id: {{i}} <br>
+          Username:  {{item.Username}}  <br>
+          Password    {{item.Password}}       <br>  
+          Email: {{item.Email}}    <br>  
+      <mat-divider ></mat-divider>
+           </div>
+       
+      </mat-list-item>
+     
+         <br> <br>   <br> <br>
+   HERE:  {{ this.ps.getAccess()   }}
+    </div>
+	</div>
+
+	</div>
+<div ng-if="this.ps.getAccess() == 1">
+HI - 1
+</div>
+<div ng-if="this.ps.getAccess() == 0">
+HI - 0
+</div>
+<br>

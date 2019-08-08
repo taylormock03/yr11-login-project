@@ -1,0 +1,75 @@
+<section>
+	<mat-sidenav-container hasBackdrop="true">
+
+		<mat-sidenav #snav mode="'over'" [fixedInViewport]="true">
+			<!--MENU ITEMS =====================1=============  -->
+			<mat-nav-list>
+				<mat-list-item routerLink="/home" (click)="close()" >
+					<mat-icon matListIcon>home</mat-icon>
+					Home
+				</mat-list-item>
+
+       <div *ngIf="this.ss.getAccess()">
+        	<mat-list-item routerLink="/home" (click)="close()">
+					<mat-icon matListIcon>home</mat-icon>
+				    Yer Im loggin
+				  </mat-list-item>
+       </div>
+				<mat-list-item routerLink="/login" (click)="close()">
+					<mat-icon matListIcon>check_box</mat-icon>
+					Login
+				</mat-list-item>
+
+	<mat-list-item routerLink="/signup" (click)="close()">
+					<mat-icon matListIcon>check_box</mat-icon>
+					Sign up
+				</mat-list-item>
+
+				<mat-list-item (click)="snav.close()">
+					<mat-icon matListIcon>cancel</mat-icon>
+					Close
+				</mat-list-item>
+			</mat-nav-list>
+
+		</mat-sidenav>
+
+
+		<mat-sidenav-content>
+			<!-- ROUTER -->
+			<router-outlet></router-outlet>
+			<!-- end router -->
+		</mat-sidenav-content>
+
+	</mat-sidenav-container>
+
+
+	<!----------TOP NAV BAR----------->
+	<mat-toolbar color="primary" class="topBar">
+		<div fxHide.gt-xs>
+			<button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+			</div>
+			<div fxFlex> </div>
+			<div  fxFlex>
+				APPLICATION NAME
+			</div>
+			<div fxFlex > </div>
+			<div fxHide.xs >
+				<!--menu component-->
+			
+			</div>
+		</mat-toolbar>
+		<!-- end top nav bar-->
+
+
+
+	<!---------FOOTER------------->
+		<mat-toolbar color="primary" class="footer">
+			<div class="footerMenu">
+				© Bradfield College  2019
+			</div>
+		</mat-toolbar>
+		<!-- end footer-->
+
+    <section>
